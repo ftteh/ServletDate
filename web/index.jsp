@@ -102,7 +102,9 @@
                 <div class="col-lg-9">
                   <select class="form-control" id="select" name="destination">
                       <c:forEach items="${sessionScope.destinations}" var="i">                                
-                              <option value='<c:out value="${i.name}" />'><c:out value="${i.name}" /></option>
+                          <c:if test="${i.status=='1'}">    
+                          <option value='<c:out value="${i.name}" />'><c:out value="${i.name}" /></option>
+                          </c:if>
                       </c:forEach>
                   </select>
                 </div>
